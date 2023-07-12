@@ -1,0 +1,74 @@
+from tkinter import*
+root = Tk()
+root.title("Історія")
+root.geometry("800x600")
+text3 = ""
+mark = 0
+var1 = IntVar()
+def funktion():
+    global mark
+    mark += 2
+def funktion1():
+        global var1
+        text3 = Label(root, text="1.Коли з'явилося слово _Україна_?", font=(3))
+        text3.grid(column=0, row=5)
+        button1 = Radiobutton(root, text="1113", variable=var1, value=1)
+        button1.grid(column=0, row=6)
+        button2 = Radiobutton(root, text="1187", variable=var1, value=2, command = funktion)
+        button2.grid(column=0, row=7)
+        button3 = Radiobutton(root, text="991", variable=var1, value=3)
+        button3.grid(column=0, row=8)
+        button7 = Button(root, text="Наступне", command = funktion2)
+        button7.grid(column=0,row=9)
+def funktion2():
+    global var1
+    text4 = Label(root, text="2.В якому році Україна прийняла християнство?", font=(3))
+    text4.grid(column=0, row=10)
+    button4 = Radiobutton(root, text="1018", variable=var1, value=1)
+    button4.grid(column=0, row=11)
+    button5 = Radiobutton(root, text="999", variable=var1, value=2)
+    button5.grid(column=0, row=12)
+    button6 = Radiobutton(root, text="988", variable=var1, value=3, command=funktion)
+    button6.grid(column=0, row=13)
+    button11 = Button(root, text="Наступне", command=funktion3)
+    button11.grid(column=0, row=14)
+def funktion3():
+    global var1
+    text5 = Label(root, text="3.Хто такі козаки?", font=(3))
+    text5.grid(column=0, row=15)
+    button8 = Radiobutton(root, text="об'єднання тюркських та інших племен, що вперше згадується у VIII столітті", variable=var1, value=1)
+    button8.grid(column=0, row=16)
+    button9 = Radiobutton(root, text="Члени самоврядних чоловічих військових, згодом і територіальних громад, що з 15 століття існували на теренах Українського _Дикого поля_", variable=var1, value=2, command=funktion)
+    button9.grid(column=0, row=17)
+    button10 = Radiobutton(root, text="Незаможні селяни, наймані робітники, дрібна шляхта й нижче духовенство, які були борцями проти польської неволі.", variable=var1, value=3)
+    button10.grid(column=0, row=18)
+    button12 = Radiobutton(root,
+                           text="це середньовічна народність тюркської групи. Цей народ населяв Євразійський степ у XI-XII століттях, відомий у той час як Дешт-і Кипчак.",
+                           variable=var1, value=3)
+    button12.grid(column=0, row=19)
+    button13 = Button(root, text="Наступне", command=funktion4)
+    button13.grid(column=0, row=19)
+def funktion4():
+    global var1
+    text5 = Label(root, text="4.Назвіть першого гетьмана Запорозької Січі?", font=(3))
+    text5.grid(column=0, row=20)
+    button14 = Radiobutton(root, text="Павло Полуботок", variable=var1, value=1)
+    button14.grid(column=0, row=21)
+    button15 = Radiobutton(root, text="Дмитро Вишнивецький (Байда)", variable=var1, value=2, command=funktion)
+    button15.grid(column=0, row=22)
+    button16 = Radiobutton(root, text="Петро Калнишевський", variable=var1, value=3)
+    button16.grid(column=0, row=23)
+    button17 = Radiobutton(root,
+                           text="Іван Виговський",
+                           variable=var1, value=3, command=funktion)
+    button17.grid(column=0, row=24)
+    button18 = Button(root, text="Наступне", command=funktion4)
+    button18.grid(column=0, row=25)
+
+text = Label(root, text = "Ласкаво просимо на тест _Історія України_", font = ("Arial", 13), background="red")
+text.grid(column=0, row=0)
+text1 = Label(root, text = "6 питань по 2 бали за кожне", font=(5))
+text1.grid(column=0, row=1)
+button = Button(root, text = "Почати тест", bg = "yellow", fg = "blue", command=funktion1)
+button.grid(column=0, row=4)
+root.mainloop()
